@@ -15,7 +15,8 @@ const Plane = ({ isRotating, ...props }) => {
         ref.current.rotation.y = 7.8;
         ref.current.rotation.z = 7;
 
-        ref.current.position.x = Math.sin(clock.elapsedTime) - 4.5;
+        // ref.current.position.x = Math.log10(clock.elapsedTime) - 4.5;
+        ref.current.position.x = Math.tan(0.3 * clock.elapsedTime);
     });
 
     return (

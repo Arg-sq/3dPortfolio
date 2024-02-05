@@ -30,6 +30,7 @@ const AppRoutes = () => {
     return (
         <main className="bg-slate-300/20">
             <Navbar />
+
             {element}
         </main>
     );

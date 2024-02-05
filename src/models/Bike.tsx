@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import bikeScene from "../assets/3d/sports_bike.glb";
@@ -74,11 +74,11 @@ const Bike = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             window.removeEventListener("keydown", handleKeyDown);
             window.removeEventListener("keyup", handleKeyUp);
         };
-    }, [gl, handlePointerDown, handlePointerMove, handlePointerUp]);
+    }, [gl, handlePointerDown, handlePointerMove, handlePointerUp,handleKeyDown,handleKeyUp]);
     useFrame(() => {
         if (!isRotating) {
             rotationSpeed.current *= dampingFactor;
-            if (Math.abs(rotationSpeed.curent) < 0.001) {
+            if (Math.abs(rotationSpeed.current) < 0.001) {
                 rotationSpeed.current = 0;
             }
             bikeRef.current.rotation.y += rotationSpeed.current;

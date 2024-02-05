@@ -6,7 +6,7 @@ import { arrow } from "../assets/icons";
 const InfoBox = ({ text, link, btnText }: { link: string; text: string; btnText: string }) => (
     <div className="info-box">
         <p className="font-medium sm:text-xl text-center">{text}</p>
-        <Link to={link} className="neo-brutalism-white neo-btn">
+        <Link to={link} className="neo-brutalism-white neo-btn z-10">
             <p className="text-re">{btnText}</p> <img src={arrow} alt="arrow" />
         </Link>
     </div>
@@ -25,14 +25,14 @@ const HomeInfo = ({ currentStage }) => {
             <InfoBox
                 text="worked with fintech, government, outsource company and picked up many skills "
                 link="/about"
-                btnText="Learn More"
+                btnText="Learn More in my About section"
             />
         ),
         3: (
             <InfoBox
                 text="Led multiple project succcessfully live,  Want to view them? "
                 link="/portfolio"
-                btnText="Visit My Portfolio"
+                btnText="Visit My Projects"
             />
         ),
         4: (
