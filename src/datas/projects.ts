@@ -35,21 +35,21 @@ const myProjects=[
         image:"moru"
     },
     {
-        title:"this is SQ",
-        desc:"this is desc",
-        image:"/portfolio/src/assets/images/sq.webp"
+        title:"3D websites",
+        desc:"Built a website using ThreeJS and tailwind with interactive UI and working socials including emailJS",
+        image:"web"
 
     },
     {
         title:"this is SQ",
         desc:"this is desc",
-        image:"/portfolio/src/assets/images/sq.webp"
+        image:"dummy"
 
     },
     {
         title:"this is SQ",
         desc:"this is desc",
-        image:"/portfolio/src/assets/images/sq.webp"
+        image:"dummy"
 
     },
 ]

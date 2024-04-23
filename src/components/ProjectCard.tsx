@@ -1,4 +1,4 @@
-import { squadcast, qualtech, nepmeds, sikai, dharti,moru } from "../assets/images";
+import { squadcast, qualtech, nepmeds, sikai, dharti,moru ,web,dummy} from "../assets/images";
 
 import "aos/dist/aos.css";
 interface ICard {
@@ -30,6 +30,8 @@ const ProjectCard = ({ key, project }: ICard) => {
     sikai: sikai,
     dharti: dharti,
     moru:moru,
+    web:web,
+    dummy:dummy,
   };
   function getRandomAnimationIndex() {
     return Math.floor(Math.random() * animation.length);

@@ -7,7 +7,8 @@ import nepmeds from "./nepmeds.png"
 import sikai from "./sikai.webp"
 import dharti from "./dharti_agro.webp"
 import moru from "./moru.jpg"
-import projectGif from "./project.png"
+import web from "./project.jpeg"
+import dummy from "./dummy.jpeg"
 
 export {
     hero,
@@ -19,5 +20,5 @@ export {
     sikai,
     dharti,
     moru,
-    projectGif
+    web,dummy
 }
