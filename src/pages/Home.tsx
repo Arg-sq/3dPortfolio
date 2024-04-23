@@ -56,8 +56,8 @@ const Home = () => {
             >
                 <Suspense fallback={<Loader />}>
                     <directionalLight position={[20, 10, 200]} intensity={3} />
-                    {/* <pointLight /> */}
-                    {/* <spotLight /> */}
+                    <pointLight intensity={2}/>
+                    <spotLight />
                     <hemisphereLight groundColor="black" intensity={1} />
                     <ambientLight intensity={1} />
                     <Bike
