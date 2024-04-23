@@ -1,9 +1,12 @@
-import { squadcast, qualtech, nepmeds, sikai, dharti,moru ,web,dummy} from "../assets/images";
+import { generatePath, useNavigate } from "react-router-dom";
+import { squadcast, qualtech, nepmeds, sikai, dharti,moru ,web,dummy} from "../../assets/images";
 
 import "aos/dist/aos.css";
+import { PORTFOLIO_ROUTES } from "../../../routes/routeConstant";
 interface ICard {
   key: number;
   project: {
+    id:number;
     title: string;
     desc: string;
     image: string;
@@ -36,6 +39,7 @@ const ProjectCard = ({ key, project }: ICard) => {
   function getRandomAnimationIndex() {
     return Math.floor(Math.random() * animation.length);
   }
+  const navigate=useNavigate()
   const randomAnimationIndex = getRandomAnimationIndex();
   const randomAnimation = animation[randomAnimationIndex];
 
@@ -65,9 +69,9 @@ const ProjectCard = ({ key, project }: ICard) => {
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {project.desc}
         </p>
-        <a
-          href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        <div
+          className="cursor-pointer inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        onClick={()=>navigate(generatePath(`${PORTFOLIO_ROUTES.PROJECT_DETAILS}`,{id:project.id}))}
         >
           Read more
           <svg
@@ -85,7 +89,7 @@ const ProjectCard = ({ key, project }: ICard) => {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </a>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toastFail, toastSuccess } from "../components/molecules/toast";
+import { toastFail, toastSuccess } from "../utils/toast";
 
 import Confetti from "react-confetti";
 

@@ -1,5 +1,5 @@
 import myProjects from "../datas/projects";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/molecules/ProjectCard";
 import { useEffect } from "react";
 import AOS from "aos";
 

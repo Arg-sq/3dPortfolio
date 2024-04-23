@@ -3,4 +3,5 @@ export const PORTFOLIO_ROUTES = {
     ABOUT: "/about",
     PROJECT: "/project",
     CONTACT: "/contact",
+    PROJECT_DETAILS:"/project/:id"
 };
