@@ -8,6 +8,7 @@ import squadcast from "./sq.webp"
 import qualtech from "./qualtech.png"
 import nepmeds from "./nepmeds.png"
 import sikai from "./sikai.webp"
+import dharti from "./dharti_agro.webp"
 
 export {
     hero,
@@ -19,5 +20,5 @@ export {
     squadcast,
     qualtech,
     nepmeds,
-    sikai
+    sikai,dharti
 }

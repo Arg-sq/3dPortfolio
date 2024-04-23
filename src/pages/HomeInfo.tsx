@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { init } from "ityped";
 import { Link } from "react-router-dom";
 import { arrow } from "../assets/icons";
@@ -11,8 +11,8 @@ const InfoBox = ({ text, link, btnText }: { link: string; text: string; btnText:
         </Link>
     </div>
 );
-const HomeInfo = ({ currentStage }) => {
-    const textRef = useRef();
+const HomeInfo = ({currentStage}:{ currentStage:number }) => {
+    const textRef = useRef(null);
     const renderContent = {
         1: (
             <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
@@ -23,7 +23,7 @@ const HomeInfo = ({ currentStage }) => {
         ),
         2: (
             <InfoBox
-                text="worked with fintech, government, outsource company and picked up many skills "
+                text="worked with Fintech, Government, Outsource company and picked up many skills "
                 link="/about"
                 btnText="Learn More in my About section"
             />
@@ -31,7 +31,7 @@ const HomeInfo = ({ currentStage }) => {
         3: (
             <InfoBox
                 text="Led multiple project succcessfully live,  Want to view them? "
-                link="/portfolio"
+                link="/project"
                 btnText="Visit My Projects"
             />
         ),
@@ -50,10 +50,10 @@ const HomeInfo = ({ currentStage }) => {
                 showCursor: true,
                 backDelay: 100,
                 backSpeed: 50,
-                strings: ["React Developer", "Blog creator", "FE instructor"],
+                strings: ["React Developer","Tech Enthusiast", "Blog creator", "FE instructor"],
             });
         }
-    }, []);
+    }, [currentStage]);
     return renderContent[currentStage] || null;
 };
 

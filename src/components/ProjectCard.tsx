@@ -1,5 +1,7 @@
-import { squadcast, qualtech, nepmeds, sikai } from "../assets/images";
-
+import { squadcast, qualtech, nepmeds, sikai, dharti } from "../assets/images";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 interface ICard {
   key: number;
   project: {
@@ -8,15 +10,42 @@ interface ICard {
     image: string;
   };
 }
+const animation = [
+  "fade-up",
+  "fade-down",
+  "fade-right",
+  "fade-left",
+  "zoom-in",
+  "zoom-out",
+  "slide-up",
+  "flip-up",
+  "flip-down",
+  "flip-right",
+  "flip-left",
+];
 const ProjectCard = ({ key, project }: ICard) => {
   const projectImage: { [key: string]: string } = {
     squadcast: squadcast,
     qualtech: qualtech,
     nepmeds: nepmeds,
     sikai: sikai,
+    dharti: dharti,
   };
+  function getRandomAnimationIndex() {
+    return Math.floor(Math.random() * animation.length);
+  }
+  const randomAnimationIndex = getRandomAnimationIndex();
+  const randomAnimation = animation[randomAnimationIndex];
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
     <div
+      data-aos={randomAnimation}
       key={key}
       className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >

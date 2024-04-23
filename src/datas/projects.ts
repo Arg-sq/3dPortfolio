@@ -7,8 +7,14 @@ const myProjects=[
     },
     {
         title:"Loan Mgmt Tool",
-        desc:"It is a Fin-tech product of MIFIN focused for loan retrieving from clients",
+        desc:"It is a dashboard Fin-tech product of MIFIN focused for loan retrieving from clients",
         image:"qualtech"
+
+    },
+    {
+        title:"Trainee Mgmt System",
+        desc:"Web based dashboard system to manage, train ,schedule, exam, quiz resource, video learning platform  for government officers",
+        image:"sikai"
 
     },
     {
@@ -18,15 +24,9 @@ const myProjects=[
 
     },
     {
-        title:"Trainee Mgmt System",
-        desc:"this is desc",
-        image:"sikai"
-
-    },
-    {
-        title:"this is SQ",
-        desc:"this is desc",
-        image:"/portfolio/src/assets/images/sq.webp"
+        title:"Dharti Agro",
+        desc:"Website for indian client built using nextJS, shadcn ui , and tailwind, reflecting their moto and campaign",
+        image:"dharti"
 
     },
     {
