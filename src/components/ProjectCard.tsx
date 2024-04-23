@@ -1,4 +1,4 @@
-import { squadcast, qualtech, nepmeds, sikai, dharti } from "../assets/images";
+import { squadcast, qualtech, nepmeds, sikai, dharti,moru } from "../assets/images";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -30,13 +30,14 @@ const ProjectCard = ({ key, project }: ICard) => {
     nepmeds: nepmeds,
     sikai: sikai,
     dharti: dharti,
+    moru:moru,
   };
   function getRandomAnimationIndex() {
     return Math.floor(Math.random() * animation.length);
   }
   const randomAnimationIndex = getRandomAnimationIndex();
   const randomAnimation = animation[randomAnimationIndex];
-  
+
   useEffect(() => {
     AOS.init({
       duration: 2000,

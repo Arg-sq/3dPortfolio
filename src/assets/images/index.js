@@ -9,6 +9,7 @@ import qualtech from "./qualtech.png"
 import nepmeds from "./nepmeds.png"
 import sikai from "./sikai.webp"
 import dharti from "./dharti_agro.webp"
+import moru from "./moru.jpg"
 
 export {
     hero,
@@ -20,5 +21,5 @@ export {
     squadcast,
     qualtech,
     nepmeds,
-    sikai,dharti
+    sikai,dharti,moru
 }

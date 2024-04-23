@@ -25,15 +25,14 @@ const myProjects=[
     },
     {
         title:"Dharti Agro",
-        desc:"Website for indian client built using nextJS, shadcn ui , and tailwind, reflecting their moto and campaign",
+        desc:"Website for indian client built using nextJS, shadcn ui and tailwind, reflecting their moto and campaign",
         image:"dharti"
 
     },
     {
-        title:"this is SQ",
-        desc:"this is desc",
-        image:"/portfolio/src/assets/images/sq.webp"
-
+        title:"Moru blog page",
+        desc:"Moru is a fintech digital wallet company whose blog website was built using antD,redux-toolkit and vite",
+        image:"moru"
     },
     {
         title:"this is SQ",
