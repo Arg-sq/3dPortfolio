@@ -6,7 +6,8 @@ import Bike from "../models/Bike";
 import Bg from "../models/bg";
 import Plane from "../models/Plane";
 import HomeInfo from "./HomeInfo";
-
+import { useEffect } from "react";
+import AOS from "aos";
 const Home = () => {
     const [rotating, setRotating] = useState(false);
     const [currentStage, setCurrentStage] = useState(1);
@@ -43,9 +44,14 @@ const Home = () => {
 
     const [logoScale, screenPosition, logoRotation] = adjustLogoForScreenSize();
 
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
     return (
         <section className="w-full h-screen relative">
-            <div className="absolute w-full">
+            <div className="absolute w-full" data-aos={"fade-down"}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff0000" fill-opacity="0.8" d="M0,288L48,245.3C96,203,192,117,288,85.3C384,53,480,75,576,117.3C672,160,768,224,864,213.3C960,203,1056,117,1152,85.3C1248,53,1344,75,1392,85.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
             </div>
             <div className="absolute top-28 left-0 right-0 flex items-center justify-center">

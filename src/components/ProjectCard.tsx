@@ -1,6 +1,5 @@
 import { squadcast, qualtech, nepmeds, sikai, dharti,moru } from "../assets/images";
-import { useEffect } from "react";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 interface ICard {
   key: number;
@@ -38,11 +37,7 @@ const ProjectCard = ({ key, project }: ICard) => {
   const randomAnimationIndex = getRandomAnimationIndex();
   const randomAnimation = animation[randomAnimationIndex];
 
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
+
 
   return (
     <div
@@ -53,7 +48,7 @@ const ProjectCard = ({ key, project }: ICard) => {
       <a href="#">
         <div className=" overflow-hidden bg-cover bg-no-repeat">
           <img
-            className="w-[100%] h-52 transition duration-300 ease-in-out hover:scale-110 hover:opacity-50"
+            className="w-[100%] h-52 rounded-t-lg transition duration-300 ease-in-out hover:scale-110 hover:opacity-50"
             src={projectImage[project.image]}
             alt={project.title}
           />
