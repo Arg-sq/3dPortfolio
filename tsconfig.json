@@ -21,6 +21,7 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
+        "allowJs": true,
         /* This ensures that TypeScript includes the necessary type declarations for the Vite client API.*/
         "types": [
             "vite/client"
