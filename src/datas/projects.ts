@@ -194,6 +194,21 @@ const myProjects = [
     title: "Random Project ",
     desc: "A project I did long back but lost its code and docs",
     image: "dummy",
+    link: "https://github.com/AsheshRanaGurung/BabaalDeal",
+    tech: [
+      "React Js",
+      "Django",
+      "Sqlite/ Postgres",
+      "Axios",
+      "Mdbreact",
+      "React Bootstrap",
+      "Redux",
+      "React Router Dom",
+      ],
+      myContribution: [
+      "This was a project back in 2021 so I forgot most of the highlight, but you can check the code in the github link."
+      ],
+
   },
 ];
 export default myProjects;

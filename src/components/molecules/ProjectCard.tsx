@@ -10,6 +10,10 @@ interface ICard {
     title: string;
     desc: string;
     image: string;
+    link:string;
+    tech:Array<string>;
+    myContribution:Array<string>;
+    iframeLink?:string;
   };
 }
 const animation = [
@@ -51,21 +55,23 @@ const ProjectCard = ({ key, project }: ICard) => {
       key={key}
       className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
-      <a href="#">
-        <div className=" overflow-hidden bg-cover bg-no-repeat">
+
+        <div className=" overflow-hidden bg-cover bg-no-repeat"
+        onClick={()=>navigate(generatePath(`${PORTFOLIO_ROUTES.PROJECT_DETAILS}`,{id:project.id}))}
+        
+        >
           <img
             className="w-[100%] h-52 rounded-t-lg transition duration-300 ease-in-out hover:scale-110 hover:opacity-50"
             src={projectImage[project.image]}
             alt={project.title}
           />
         </div>
-      </a>
       <div className="p-5">
-        <a href="#">
+   
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {project.title}
           </h5>
-        </a>
+     
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {project.desc}
         </p>

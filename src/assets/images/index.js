@@ -6,6 +6,7 @@ import dharti from "./dharti_agro.webp"
 import moru from "./moru.jpg"
 import web from "./web.png"
 import dummy from "./dummy.jpeg"
+import ashesh from "./ashesh.jpg"
 
 export {
     squadcast,
@@ -14,5 +15,5 @@ export {
     sikai,
     dharti,
     moru,
-    web,dummy
+    web,dummy,ashesh
 }
