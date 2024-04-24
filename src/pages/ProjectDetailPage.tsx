@@ -50,6 +50,9 @@ const ProjectDetailPage = () => {
                 className="w-[100%] h-[100%]"
               />
               <div className=" flex flex-col gap-4">
+                <p className="font-semibold text-lg">
+                  My Contribution
+                  </p>
                 {individualProject.myContribution?.map((tech) => (
                   <p key={tech}>
                     <li>{tech}</li>

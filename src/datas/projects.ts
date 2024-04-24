@@ -21,9 +21,9 @@ const myProjects = [
     ],
     myContribution: [
       "Squadcast is a product based end-to-end Incident management software based on US and India, helping SRE,DevOps and engineers do on-call scheduling and incident management in the SRE way.",
-      "2 weeks scrum plan where I get tickets on Jira board for buildingalerting and on-call management feature intuitive",
+      "2 weeks scrum plan where I get tickets on Jira board for building, alerting and on-call management feature intuitive",
       "Active oncall handover,meetings,standup with PM about feature . ",
-      "Common practise with Chakra-UI,sq own library,Ts,luxon,react hookform,react query,graphql to develop a feature. ",
+      "Common practise with Chakra-UI,sq own library,Ts,luxon,react hookform,react query,graphql to develop a feature for dashboard based project. ",
     ],
   },
   {
@@ -57,12 +57,52 @@ const myProjects = [
     title: "Trainee Mgmt System",
     desc: "Web based dashboard system to manage, train ,schedule, exam, quiz resource, video learning platform  for government officers",
     image: "sikai",
+    link:"https://www.nasc.org.np/",
+    iframeLink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.491755190028!2d85.31073757609201!3d27.671192227084042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1832b2c9a291%3A0x91894fa7594334d9!2sNepal%20Administrative%20Staff%20College!5e0!3m2!1sen!2sin!4v1713935587066!5m2!1sen!2sin",
+    tech:[
+        "TypeScript",
+        "Chakra UI",
+        "Redux Toolkit",
+        "@tanstack",
+        "Formik",
+        "React Query",
+        "YUP",
+        "JWT",
+    ],
+    myContribution:[
+        "Developed a Trainee Management System for government sector edu wing using TypeScript, ReactQuery, JWT, rtk and Chakra UI.",
+        "Implemented user authentication and authorization using JWT,worked in roles and permission of user for CRUD access",
+        "Created trainee profiles using Chakra UI for a visually appealing interface.",
+        "Utilized React Query for efficient data fetching and caching.",
+        "Designed a tracking system for training programs and progress monitoring.",
+        "Implemented Generating reports feature for trainee progress and performance."
+    ]
   },
   {
     id: 4,
     title: "Doctor Appointment System",
     desc: "Web based doctor appointment booking system including web video call and payment system",
     image: "nepmeds",
+    link:"https://www.nepmeds.com.np/",
+  iframeLink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7063.879961094374!2d85.34027849568015!3d27.719139352303667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1b26096329eb%3A0x6a0e927a9e1f4bdc!2sNepmeds%20Pvt.ltd!5e0!3m2!1sen!2snp!4v1713935839670!5m2!1sen!2snp",
+    tech:[
+        "TypeScript",
+        "Chakra UI",
+        "reactchart2js",
+        "React Context",
+        "@tanstack",
+        "react Hook Form",
+        "React Query",
+        "YUP",
+        "JWT",
+    ],
+    myContribution:[
+        "Developed a doctor appointment system using TypeScript, ReactQuery, JWT , zustand , reactchart2js and Chakra UI.",
+        "Implemented user authentication and authorization using JWT,worked in roles and permission of user for CRUD access",
+        "Developed doctor booking according to their schedule with integrated khalti and esewa payment",
+        "Utilized React Query for efficient data fetching and caching.",
+        "Regular PR reviews practise.",
+    ]
   },
   {
     id: 5,
