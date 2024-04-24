@@ -69,14 +69,14 @@ const ProjectDetailPage = () => {
               <li>{tech}</li>
             ))}
           </div>
-          <h1 className="subhead-text ">Want To know more about the client?</h1>
+          <h1 className="subhead-text ">Want To know more about the {"iframeLink" in individualProject?"client":"project" }?</h1>
           <div className="mb-4">
             <a style={{ color: "blue" }} href={individualProject.link}>
               Click here
             </a>
           </div>
           <iframe
-            src={individualProject.iframeLink}
+            src={individualProject.iframeLink?? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0684188647137!2d85.31185028695269!3d27.684280165144962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1941d6562495%3A0xb92005dfe4181c00!2sCode%20Himalaya!5e0!3m2!1sen!2snp!4v1713937056715!5m2!1sen!2snp"}
             width="600"
             height="450"
             style={{ border: 0 }}
