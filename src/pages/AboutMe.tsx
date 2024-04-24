@@ -8,6 +8,7 @@ const AboutMe = () => {
       duration: 2000,
     });
   }, []);
+  
   return (
     <div className="relative  h-[100vh] overflow-hidden">
       <section className="relative mr-8 ">

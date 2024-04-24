@@ -1,6 +1,5 @@
-import React from "react";
 import { Html } from "@react-three/drei";
-import loading from "../assets/images/turtle-run.gif";
+
 const Loader = () => {
     return (
         <Html>
