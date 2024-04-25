@@ -73,7 +73,7 @@ const AboutMe = () => {
         <div className="absolute w-full left-[18%] bottom-[70%]">
           <a
             href=" 
-https://drive.google.com/file/d/1tGwfMjNclp-Pi0NuZv9SOLE-LdYy5WV_/view?usp=sharing
+            https://drive.google.com/file/d/1EHdxFk4d21VpTRmUouR58mjLJl7aYzsI/view?usp=sharing
 "
           >
             <button className="btn mt-8 z-20 animate-bounce absolute">
