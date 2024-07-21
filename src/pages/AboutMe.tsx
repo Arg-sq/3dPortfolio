@@ -37,8 +37,8 @@ const AboutMe = () => {
                     My name is Ashesh Gurung. I've been working on this IT field
                     since 2021 with a strong IT background as I've done my
                     bachelor's degree in Bsc.CSIT .
-                    <br />I am a highly skilled React developer with experience
-                    in developing applications for digital wallet
+                    <br />I am a highly skilled FullStack|React developer with
+                    experience in developing applications for digital wallet
                     companies,government projects,indian-client projects and
                     in-house projects, Currently, I am working for a
                     product-based company(Code himalaya) where I am constantly
@@ -47,14 +47,16 @@ const AboutMe = () => {
                     <br />
                     <br />
                     My expertise lies in building dynamic and responsive user
-                    interfaces using React,
-                    typescript,chakra,MUI,Redux,zustand,RTK,React-query ,graphql
-                    and JavaScript. I have a proven track record of successfully
-                    delivering high-quality projects within tight deadlines, and
-                    I am always striving to improve my skills and stay
-                    up-to-date with the latest industry trends. I am passionate
-                    about collaborating with cross-functional teams and working
-                    on challenging projects that require innovative solutions.
+                    interfaces and FE architechture using React,
+                    typescript,chakra,MUI,Redux,zustand,RTK,React-query
+                    ,graphql,RTL,Jest and JavaScript with Node,express
+                    ,postgres,MongoDB. I have a proven track record of
+                    successfully delivering high-quality projects within tight
+                    deadlines, and I am always striving to improve my skills and
+                    stay up-to-date with the latest industry trends. I am
+                    passionate about collaborating with cross-functional teams
+                    and working on challenging projects that require innovative
+                    solutions.
                   </p>
                 </div>
               </main>
