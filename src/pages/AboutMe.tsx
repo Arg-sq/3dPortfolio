@@ -8,7 +8,7 @@ const AboutMe = () => {
       duration: 2000,
     });
   }, []);
-  
+
   return (
     <div className="relative  h-[100vh] overflow-hidden">
       <section className="relative mr-8 ">
@@ -73,7 +73,7 @@ const AboutMe = () => {
         <div className="absolute w-full left-[18%] bottom-[70%]">
           <a
             href=" 
-            https://drive.google.com/file/d/1EHdxFk4d21VpTRmUouR58mjLJl7aYzsI/view?usp=sharing
+           https://drive.google.com/file/d/123k5uyIzyrn-JtoMNno1R9w_bI0KJ0l-/view?usp=sharing
 "
           >
             <button className="btn mt-8 z-20 animate-bounce absolute">
