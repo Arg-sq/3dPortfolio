@@ -17,6 +17,7 @@ const myProjects = [
       "GraphQl",
       "Zod",
       "Lodash",
+      "RTL|Jest",
       "React Error Boundary",
       "Unleash Proxy Client",
     ],
@@ -130,7 +131,8 @@ const myProjects = [
     desc: "Moru is a fintech digital wallet company whose blog website was built using antD,redux-toolkit and vite",
     image: "moru",
     link: "https://github.com/AsheshRanaGurung/MoruBlog",
-    iframeLink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1738130400213!2d85.325773976093!3d27.71191922528871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199a12d7497d%3A0xda6c2c0bbb0658ba!2sPay%20Nep%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1713937426927!5m2!1sen!2snp",
+    iframeLink:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1738130400213!2d85.325773976093!3d27.71191922528871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199a12d7497d%3A0xda6c2c0bbb0658ba!2sPay%20Nep%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1713937426927!5m2!1sen!2snp",
     tech: [
       "React JS",
       "Ant Design",
@@ -146,7 +148,7 @@ const myProjects = [
       "Developed a blogging website with admin Panel and RBAC feature from scratch using ReactJs, ant Design ,JWT and AOS",
       "Added comment features on blog with sharing blog feature using react share",
       "Added SEO metaData using react helmet",
-      "Parsed the html dtaa blog to UI using mdb react"
+      "Parsed the html dtaa blog to UI using mdb react",
     ],
   },
   {
@@ -155,7 +157,7 @@ const myProjects = [
     desc: "Built a website using ThreeJS and tailwind with interactive UI and working socials including emailJS",
     image: "web",
     link: "https://github.com/AsheshRanaGurung/3dPortfolio",
-  tech: [
+    tech: [
       "React JS",
       "React three/drei",
       "React three/fiber",
@@ -166,7 +168,7 @@ const myProjects = [
       "Tailwind",
     ],
     myContribution: [
-    "All this that you are seeing in this website was done by me, so yeah, that's all"
+      "All this that you are seeing in this website was done by me, so yeah, that's all",
     ],
   },
   {
@@ -184,10 +186,10 @@ const myProjects = [
       "React Bootstrap",
       "Redux",
       "React Router Dom",
-      ],
-      myContribution: [
-      "This was a project back in 2021 so I forgot most of the highlight, but you can check the code in the github link."
-      ],
+    ],
+    myContribution: [
+      "This was a project back in 2021 so I forgot most of the highlight, but you can check the code in the github link.",
+    ],
   },
   {
     id: 9,
@@ -204,11 +206,10 @@ const myProjects = [
       "React Bootstrap",
       "Redux",
       "React Router Dom",
-      ],
-      myContribution: [
-      "This was a project back in 2021 so I forgot most of the highlight, but you can check the code in the github link."
-      ],
-
+    ],
+    myContribution: [
+      "This was a project back in 2021 so I forgot most of the highlight, but you can check the code in the github link.",
+    ],
   },
 ];
 export default myProjects;
