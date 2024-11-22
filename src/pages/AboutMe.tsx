@@ -63,7 +63,7 @@ const AboutMe = () => {
           </div>
           <div className="lg:absolute lg:inset-y-0 lg:right-0 sm:h-full lg:w-1/2">
             <img
-              className="h-56 w-full object-contain lg:object-cover  sm:h-72 md:h-96 lg:w-full lg:h-full "
+              className="h-56 w-full object-contain lg:object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full "
               src={ashesh}
               alt="asheshx"
             />
@@ -72,7 +72,7 @@ const AboutMe = () => {
       </section>
       <div className="absolute w-[100dvw] z-10 bottom-0" data-aos={"fade-up"}>
         <div className="absolute w-full left-[18%] bottom-[70%]">
-          <button className="btn  mt-8 z-20 animate-bounce absolute">
+          <button className="btn mt-8 z-20 animate-bounce absolute">
             <a
               href=" 
 https://drive.google.com/file/d/1fd-8bwq7lLaI9iwyztcPb40-kcW7fu7r/view?usp=sharing
