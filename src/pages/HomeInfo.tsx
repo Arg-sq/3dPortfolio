@@ -1,7 +1,14 @@
-import { useEffect, useRef } from "react";
+import { ReactElement, useCallback } from "react";
 import { init } from "ityped";
 import { Link } from "react-router-dom";
 import { arrow } from "../assets/icons";
+
+const ROLES = [
+  "FullStack Developer",
+  "Frontend Lecturer",
+  "React Engineer",
+  "TypeScript Nerd",
+];
 
 const InfoBox = ({
   text,
@@ -19,19 +26,33 @@ const InfoBox = ({
     </Link>
   </div>
 );
+
 const HomeInfo = ({ currentStage }: { currentStage: number }) => {
-  const textRef = useRef(null);
-  const renderContent = {
+  const attachIType = useCallback((el: HTMLSpanElement | null) => {
+    if (!el) return;
+    el.textContent = "";
+    init(el, {
+      showCursor: true,
+      backDelay: 1500,
+      backSpeed: 50,
+      typeSpeed: 80,
+      startDelay: 200,
+      loop: true,
+      strings: ROLES,
+    });
+  }, []);
+
+  const renderContent: Record<number, ReactElement> = {
     1: (
       <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
         Hi, I am <span className="font-semibold">Ashesh Rana Gurung</span>
-        <br />a <span ref={textRef}></span>
+        <br />a <span ref={attachIType}></span>
         <p>Scroll the bike &#x1f525; </p>
       </h1>
     ),
     2: (
       <InfoBox
-        text="worked with Fintech, Government, Outsource company and picked up many skills "
+        text="5+ years across fintech, healthcare, gov platforms, and SRE tooling — currently at Maitri Services & lecturing at Techspire."
         link="/about"
         btnText="Learn More in my About section"
       />
@@ -52,21 +73,6 @@ const HomeInfo = ({ currentStage }: { currentStage: number }) => {
     ),
   };
 
-  useEffect(() => {
-    if (currentStage === 1) {
-      init(textRef.current, {
-        showCursor: true,
-        backDelay: 100,
-        backSpeed: 50,
-        strings: [
-          "FullStack Developer",
-          "Tech Enthusiast",
-          "Blog creator",
-          "FE instructor",
-        ],
-      });
-    }
-  }, [currentStage]);
   return renderContent[currentStage] || null;
 };
 

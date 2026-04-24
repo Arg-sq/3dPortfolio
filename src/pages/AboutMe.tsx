@@ -1,95 +1,117 @@
-import { useEffect } from "react";
-import { ashesh } from "../assets/images";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import { ashesh } from "../assets/images";
+import Timeline from "../components/molecules/Timeline";
+import { experience } from "../datas/experience";
 
 const AboutMe = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
+    AOS.init({ duration: 900, once: false, mirror: true });
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const total = h.scrollHeight - h.clientHeight;
+      setScrollProgress(total > 0 ? (h.scrollTop / total) * 100 : 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div className="relative  h-[100vh] ">
-      <section className="relative lg:mr-8 ">
-        <div id="about" className="relative bg-white overflow-hidden mt-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-              <svg
-                className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
-                fill="currentColor"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                aria-hidden="true"
+    <div className="relative w-full">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-transparent z-50">
+        <div
+          className="h-full bg-gradient-to-r from-[#db0000] to-[#640c0c] transition-[width] duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      <section
+        className="relative pt-32 pb-20 px-8 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 20%, rgba(219,0,0,0.15), transparent 40%), radial-gradient(circle at 80% 80%, rgba(100,12,12,0.2), transparent 40%), #fff",
+        }}
+      >
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+              About me
+            </p>
+            <h1 className="text-4xl sm:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text mb-6">
+              Ashesh Rana Gurung
+            </h1>
+            <p className="text-gray-700 leading-relaxed text-justify mb-6">
+              Frontend-focused <strong>full-stack developer with 5+ years</strong> of
+              experience shipping production software. I've worked across
+              digital wallets, healthcare, government platforms, SRE/DevOps
+              tooling, Indian-client projects, and internal systems.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-justify mb-6">
+              Currently a <strong>Software Engineer at Maitri Services</strong> and a
+              <strong> Lecturer at Techspire College</strong>, where I teach
+              JavaScript and React.js.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-justify">
+              Core focus: <strong>React, TypeScript, Python, FastAPI</strong>.
+              Day-to-day I also reach for Next.js, Zustand, React Query,
+              GraphQL, and Jest/RTL on the frontend, with Node/Express on the
+              backend when the project calls for it.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="https://drive.google.com/file/d/1fd-8bwq7lLaI9iwyztcPb40-kcW7fu7r/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
               >
-                <polygon points="50,0 100,0 50,100 0,100"></polygon>
-              </svg>
-
-              <div className="pt-1"></div>
-
-              <main className="mt-10 mx-auto lg:max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                <div className="sm:text-center lg:text-left">
-                  <h2 className="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
-                    About me
-                  </h2>
-
-                  <p className="lg:pr-8 text-justify">
-                    My name is Ashesh Gurung. I've been working on this IT field
-                    since 2021 with a strong IT background as I've done my
-                    bachelor's degree in Bsc.CSIT .
-                    <br />I am a highly skilled FullStack|React developer with
-                    experience in developing applications for{" "}
-                    <strong>digital wallet companies</strong>,
-                    <strong> government projects</strong>,
-                    <strong>indian-client projects </strong>
-                    and in-house projects, Currently, I am working for a
-                    product-based company(Code himalaya) where I am constantly
-                    seeking opportunities to learn new technologies and expand
-                    my knowledge base.
-                    <br />
-                    <br />
-                    My expertise lies in building dynamic and responsive user
-                    interfaces and FE architechture using React, Typescript,
-                    Chakra, Schadcn, MUI, Redux, Zustand, RTK, React-query
-                    ,Graphql, RTL, Jest with Node, Express , Postgres, MongoDB.
-                    I have a proven track record of successfully delivering
-                    high-quality projects within tight deadlines, and I am
-                    always striving to improve my skills and stay up-to-date
-                    with the latest industry trends.
-                  </p>
-                </div>
-              </main>
+                View my CV
+              </a>
+              <Link
+                to="/contact"
+                className="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50"
+              >
+                Get in touch
+              </Link>
             </div>
           </div>
-          <div className="lg:absolute lg:inset-y-0 lg:right-0 sm:h-full lg:w-1/2">
+          <div data-aos="fade-left" className="flex justify-center">
             <img
-              className="h-56 w-full object-contain lg:object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full "
               src={ashesh}
-              alt="asheshx"
+              alt="Ashesh"
+              className="w-full max-w-md h-[32rem] object-cover rounded-2xl shadow-xl"
+              loading="lazy"
             />
           </div>
         </div>
       </section>
-      <div className="absolute w-[100dvw] z-10 bottom-0" data-aos={"fade-up"}>
-        <div className="absolute w-full left-[18%] bottom-[70%]">
-          <button className="btn mt-8 z-20 animate-bounce absolute">
-            <a
-              href=" 
-https://drive.google.com/file/d/1fd-8bwq7lLaI9iwyztcPb40-kcW7fu7r/view?usp=sharing
-"
-            >
-              View my CV
-            </a>
-          </button>
+
+      <section className="relative py-24 px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="head-text text-center mb-4" data-aos="fade-up">
+            Experience timeline
+          </h2>
+          <p
+            className="text-center text-gray-500 mb-16"
+            data-aos="fade-up"
+            data-aos-delay="120"
+          >
+            The roles and products I've worked on since 2021.
+          </p>
+          <Timeline items={experience} />
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#ff0000"
-            fill-opacity="1"
-            d="M0,256L48,213.3C96,171,192,85,288,90.7C384,96,480,192,576,245.3C672,299,768,309,864,304C960,299,1056,277,1152,261.3C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
+      </section>
+
+      <footer className="py-10 text-center text-sm text-gray-500 bg-white">
+        © {new Date().getFullYear()} Ashesh Rana Gurung
+      </footer>
     </div>
   );
 };

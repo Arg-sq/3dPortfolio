@@ -12,8 +12,8 @@ import {
 
 import "aos/dist/aos.css";
 import { PORTFOLIO_ROUTES } from "../../../routes/routeConstant";
+
 interface ICard {
-  key: number;
   project: {
     id: number;
     title: string;
@@ -24,79 +24,70 @@ interface ICard {
     myContribution: Array<string>;
     iframeLink?: string;
   };
+  index?: number;
 }
-const animation = [
-  "fade-up",
-  "fade-down",
-  "fade-right",
-  "fade-left",
-  "zoom-in",
-  "zoom-out",
-  "slide-up",
-  "flip-up",
-  "flip-down",
-  "flip-right",
-  "flip-left",
-];
-const ProjectCard = ({ key, project }: ICard) => {
-  const projectImage: { [key: string]: string } = {
-    squadcast: squadcast,
-    qualtech: qualtech,
-    nepmeds: nepmeds,
-    sikai: sikai,
-    dharti: dharti,
-    moru: moru,
-    web: web,
-    dummy: dummy,
-  };
-  function getRandomAnimationIndex() {
-    return Math.floor(Math.random() * animation.length);
-  }
+
+const projectImage: { [key: string]: string } = {
+  squadcast,
+  qualtech,
+  nepmeds,
+  sikai,
+  dharti,
+  moru,
+  web,
+  dummy,
+};
+
+const ProjectCard = ({ project, index = 0 }: ICard) => {
   const navigate = useNavigate();
-  const randomAnimationIndex = getRandomAnimationIndex();
-  const randomAnimation = animation[randomAnimationIndex];
+  const goToDetails = () =>
+    navigate(
+      generatePath(`${PORTFOLIO_ROUTES.PROJECT_DETAILS}`, {
+        id: String(project.id),
+      })
+    );
 
   return (
     <div
-      data-aos={randomAnimation}
-      key={key}
-      className="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      data-aos="fade-up"
+      data-aos-delay={(index % 6) * 80}
+      className="group flex flex-col bg-white border border-gray-200 rounded-xl shadow-card overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
     >
-      <div
-        className=" overflow-hidden bg-cover bg-no-repeat"
-        onClick={() =>
-          navigate(
-            generatePath(`${PORTFOLIO_ROUTES.PROJECT_DETAILS}`, {
-              id: project.id,
-            })
-          )
-        }
-      >
+      <div className="overflow-hidden cursor-pointer" onClick={goToDetails}>
         <img
-          className="w-[100%] h-52 rounded-t-lg transition duration-300 ease-in-out hover:scale-110 hover:opacity-50"
+          className="w-full h-52 object-cover group-hover:scale-110 transition duration-500 ease-out"
           src={projectImage[project.image]}
           alt={project.title}
+          loading="lazy"
         />
       </div>
-      <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="p-5 flex flex-col flex-1">
+        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">
           {project.title}
         </h5>
-
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-4 text-sm font-normal text-gray-600 line-clamp-3 flex-1">
           {project.desc}
         </p>
-        <div
-          className="cursor-pointer inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() =>
-            navigate(
-              generatePath(`${PORTFOLIO_ROUTES.PROJECT_DETAILS}`, {
-                id: project.id,
-              })
-            )
-          }
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {project.tech.slice(0, 4).map((t) => (
+            <span
+              key={t}
+              className="text-xs px-2 py-0.5 rounded-md bg-gray-100 text-gray-700"
+            >
+              {t}
+            </span>
+          ))}
+          {project.tech.length > 4 && (
+            <span className="text-xs px-2 py-0.5 rounded-md bg-gray-100 text-gray-500">
+              +{project.tech.length - 4}
+            </span>
+          )}
+        </div>
+        <button
+          onClick={goToDetails}
+          className="cursor-pointer inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#db0000] to-[#640c0c] rounded-lg hover:opacity-90 transition-opacity"
         >
-          Read more
+          Read case study
           <svg
             className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
@@ -106,13 +97,13 @@ const ProjectCard = ({ key, project }: ICard) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );

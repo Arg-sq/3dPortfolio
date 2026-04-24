@@ -1,17 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
+import { Preload, useGLTF } from "@react-three/drei";
 import Loader from "./Loader";
 import Bike from "../models/Bike";
 import Bg from "../models/bg";
 import Plane from "../models/Plane";
 import HomeInfo from "./HomeInfo";
-import { useEffect } from "react";
 import AOS from "aos";
+import bikeScene from "../assets/3d/sports_bike.glb";
+import planeScene from "../assets/3d/plane.glb";
+import rocketScene from "../assets/3d/rocket.glb";
+
+useGLTF.preload(bikeScene, true, true);
+useGLTF.preload(planeScene, true, true);
+useGLTF.preload(rocketScene, true, true);
 
 const Home = () => {
   const [rotating, setRotating] = useState(false);
-  const [currentStage, setCurrentStage] = useState(1);
+  const [currentStage, setCurrentStage] = useState<number | null>(1);
+  const [canvasReady, setCanvasReady] = useState(false);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setCanvasReady(true));
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   const adjustBikeForScreenSize = () => {
     let screenScale = null;
@@ -65,35 +78,38 @@ const Home = () => {
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
-      <Canvas
-        className={`w-full absoulte top-1 h-screen bg-transparent ${
-          rotating ? "cursor-grabbing" : "cursor-grab"
-        }`}
-        camera={{ near: 0.1, far: 1000 }}
-      >
-        <Suspense fallback={<Loader />}>
-          <directionalLight position={[20, 10, 200]} intensity={3} />
-          <pointLight intensity={2} />
-          <spotLight />
-          <hemisphereLight groundColor="black" intensity={1} />
-          <ambientLight intensity={1} />
-          <Bike
-            position={bikePosition}
-            scale={bikeScale}
-            rotation={bikeRotation}
-            isRotating={rotating}
-            setCurrentStage={setCurrentStage}
-            setIsRotating={setRotating}
-          />
-          <Plane
-            isRotating={rotating}
-            logoScale={logoScale}
-            position={screenPosition}
-            rotation={logoRotation}
-          />
-          <Bg />
-        </Suspense>
-      </Canvas>
+      {canvasReady && (
+        <Canvas
+          className={`w-full absoulte top-1 h-screen bg-transparent ${
+            rotating ? "cursor-grabbing" : "cursor-grab"
+          }`}
+          camera={{ near: 0.1, far: 1000 }}
+          dpr={[1, 1.5]}
+          gl={{ powerPreference: "high-performance", antialias: true, alpha: true }}
+        >
+          <Suspense fallback={<Loader />}>
+            <directionalLight position={[20, 10, 200]} intensity={3} />
+            <hemisphereLight groundColor="black" intensity={1} />
+            <ambientLight intensity={0.8} />
+            <Bike
+              position={bikePosition}
+              scale={bikeScale}
+              rotation={bikeRotation}
+              isRotating={rotating}
+              setCurrentStage={setCurrentStage}
+              setIsRotating={setRotating}
+            />
+            <Plane
+              isRotating={rotating}
+              logoScale={logoScale}
+              position={screenPosition}
+              rotation={logoRotation}
+            />
+            <Bg />
+            <Preload all />
+          </Suspense>
+        </Canvas>
+      )}
     </section>
   );
 };

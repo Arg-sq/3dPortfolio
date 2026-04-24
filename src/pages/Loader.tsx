@@ -1,25 +1,21 @@
-import { Html } from "@react-three/drei";
+import { Html, useProgress } from "@react-three/drei";
 
 const Loader = () => {
+    const { progress, active } = useProgress();
+    const pct = Math.min(100, Math.round(progress));
+
     return (
-        <Html>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "100%",
-                    width: "100%",
-                }}
-            >
-                <img
-                    src={"https://art.pixilart.com/4d10d7022b94368.gif"}
-                    alt="loading"
-                    height="auto"
-                    width="200%"
-                />
-                Loading..
+        <Html center>
+            <div className="flex flex-col items-center justify-center gap-3 select-none">
+                <div className="relative w-48 h-2 rounded-full bg-gray-200 overflow-hidden">
+                    <div
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#db0000] to-[#640c0c] transition-[width] duration-200"
+                        style={{ width: `${pct}%` }}
+                    />
+                </div>
+                <span className="text-xs font-medium text-gray-700">
+                    {active ? `Loading 3D scene… ${pct}%` : "Ready"}
+                </span>
             </div>
         </Html>
     );

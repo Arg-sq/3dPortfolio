@@ -1,29 +1,37 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
-import planeScene from "../assets/3d/plane.glb";
+import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import type { Group } from "three";
+import planeScene from "../assets/3d/plane.glb";
 
-const Plane = ({ isRotating, ...props }) => {
-    const ref = useRef();
-    const { scene, animations } = useGLTF(planeScene);
-    const { actions } = useAnimations(animations, ref);
-    useEffect(() => {
-        actions["Take 001"]?.play();
-    }, [actions]);
-    useFrame(({ clock }) => {
-        // Update the Y position to simulate bird-like motion using a sine wave
-        ref.current.rotation.y = 7.8;
-        ref.current.rotation.z = 7;
+interface PlaneProps {
+  isRotating?: boolean;
+  logoScale?: [number, number, number] | number[];
+  position?: [number, number, number] | number[];
+  rotation?: [number, number, number] | number[];
+}
 
-        // ref.current.position.x = Math.log10(clock.elapsedTime) - 4.5;
-        ref.current.position.x = Math.tan(0.3 * clock.elapsedTime);
-    });
+const Plane = ({ isRotating: _isRotating, ...props }: PlaneProps) => {
+  const ref = useRef<Group>(null!);
+  const { scene, animations } = useGLTF(planeScene, true, true);
+  const { actions } = useAnimations(animations, ref);
 
-    return (
-        <mesh {...props} ref={ref}>
-            <primitive object={scene} />
-        </mesh>
-    );
+  useEffect(() => {
+    actions["Take 001"]?.play();
+  }, [actions]);
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    ref.current.rotation.y = 7.8;
+    ref.current.rotation.z = 7;
+    ref.current.position.x = Math.tan(0.3 * clock.elapsedTime);
+  });
+
+  return (
+    <group {...(props as object)} ref={ref}>
+      <primitive object={scene} />
+    </group>
+  );
 };
 
 export default Plane;
