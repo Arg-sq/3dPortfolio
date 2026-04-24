@@ -44,7 +44,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number }) => {
 
   const renderContent: Record<number, ReactElement> = {
     1: (
-      <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
+      <h1 className="text-base sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-4 sm:px-8 text-white mx-3 sm:mx-5 max-w-[92vw]">
         Hi, I am <span className="font-semibold">Ashesh Rana Gurung</span>
         <br />a <span ref={attachIType}></span>
         <p>Scroll the bike &#x1f525; </p>

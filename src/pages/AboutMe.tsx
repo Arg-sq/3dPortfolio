@@ -34,18 +34,18 @@ const AboutMe = () => {
       </div>
 
       <section
-        className="relative pt-32 pb-20 px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-5 sm:px-8 overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at 20% 20%, rgba(219,0,0,0.15), transparent 40%), radial-gradient(circle at 80% 80%, rgba(100,12,12,0.2), transparent 40%), #fff",
         }}
       >
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div data-aos="fade-right">
-            <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
               About me
             </p>
-            <h1 className="text-4xl sm:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text mb-5 sm:mb-6">
               Ashesh Rana Gurung
             </h1>
             <p className="text-gray-700 leading-relaxed text-justify mb-6">
@@ -86,14 +86,14 @@ const AboutMe = () => {
             <img
               src={ashesh}
               alt="Ashesh"
-              className="w-full max-w-md h-[32rem] object-cover rounded-2xl shadow-xl"
+              className="w-full max-w-md h-80 sm:h-96 lg:h-[32rem] object-cover rounded-2xl shadow-xl"
               loading="lazy"
             />
           </div>
         </div>
       </section>
 
-      <section className="relative py-24 px-8 bg-white">
+      <section className="relative py-16 sm:py-24 px-5 sm:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="head-text text-center mb-4" data-aos="fade-up">
             Experience timeline

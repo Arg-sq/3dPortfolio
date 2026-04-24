@@ -104,46 +104,46 @@ const Showcase = () => {
             "radial-gradient(circle at 20% 20%, rgba(219,0,0,0.15), transparent 40%), radial-gradient(circle at 80% 80%, rgba(100,12,12,0.2), transparent 40%), #fff",
         }}
       >
-        <div className="relative max-w-6xl mx-auto px-8 pt-32 pb-16 min-h-screen grid lg:grid-cols-[1.1fr_1fr] gap-10 items-stretch">
+        <div className="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-32 pb-12 sm:pb-16 min-h-screen grid lg:grid-cols-[1.1fr_1fr] gap-6 sm:gap-10 items-stretch">
           <div
-            className="relative h-[60vh] lg:h-auto min-h-[420px] rounded-3xl overflow-hidden"
+            className="relative h-[45vh] sm:h-[55vh] lg:h-auto min-h-[320px] sm:min-h-[420px] rounded-3xl overflow-hidden"
             data-aos="fade-right"
           >
             <ParticleField />
           </div>
 
           <div className="flex flex-col justify-center" data-aos="fade-left">
-            <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
               Portfolio — Ashesh Rana Gurung
             </p>
-            <h1 className="text-4xl sm:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text">
               5+ years building fast, tested web products.
             </h1>
-            <p className="mt-6 text-gray-600 text-lg">
+            <p className="mt-5 sm:mt-6 text-gray-600 text-base sm:text-lg">
               Frontend-focused full-stack developer. Currently at
               <strong> Maitri Services</strong> and lecturing React.js at
               <strong> Techspire College</strong>. Core stack:
               <strong> React, TypeScript, Python, FastAPI</strong>.
             </p>
-            <div className="mt-8 flex items-center gap-4 flex-wrap">
+            <div className="mt-6 sm:mt-8 flex items-center gap-3 sm:gap-4 flex-wrap">
               <Link to={PORTFOLIO_ROUTES.PROJECT} className="btn">
                 View Projects
               </Link>
               <Link
                 to={PORTFOLIO_ROUTES.ABOUT}
-                className="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50"
+                className="px-4 sm:px-5 py-2.5 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50 text-sm sm:text-base"
               >
                 About me
               </Link>
               <Link
                 to={PORTFOLIO_ROUTES.CONTACT}
-                className="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50"
+                className="px-4 sm:px-5 py-2.5 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50 text-sm sm:text-base"
               >
                 Contact
               </Link>
             </div>
             <div
-              className="mt-12 text-gray-400 text-sm flex items-center gap-2"
+              className="mt-10 sm:mt-12 text-gray-400 text-sm flex items-center gap-2"
               aria-hidden
             >
               <span className="animate-bounce">↓</span>
@@ -153,10 +153,10 @@ const Showcase = () => {
         </div>
       </section>
 
-      <section className="relative py-28 px-8 bg-white">
+      <section className="relative py-16 sm:py-28 px-5 sm:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <p
-            className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 text-center"
+            className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 text-center"
             data-aos="fade-up"
           >
             Domains
@@ -165,26 +165,28 @@ const Showcase = () => {
             What I build
           </h2>
           <p
-            className="text-center text-gray-500 max-w-2xl mx-auto mb-16"
+            className="text-center text-gray-500 max-w-2xl mx-auto mb-10 sm:mb-16 text-sm sm:text-base"
             data-aos="fade-up"
             data-aos-delay="120"
           >
             A cross-section of the industries and product types I've delivered
             in over the last five years.
           </p>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
             {domains.map((d, i) => (
               <div
                 key={d.title}
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
-                className={`relative p-7 rounded-2xl bg-gradient-to-br ${d.tint} border border-gray-100 shadow-card hover:-translate-y-1 transition-transform`}
+                className={`relative p-5 sm:p-7 rounded-2xl bg-gradient-to-br ${d.tint} border border-gray-100 shadow-card hover:-translate-y-1 transition-transform`}
               >
-                <div className="text-3xl mb-4">{d.icon}</div>
-                <h3 className="text-xl font-bold font-poppins mb-2">
+                <div className="text-3xl mb-3 sm:mb-4">{d.icon}</div>
+                <h3 className="text-lg sm:text-xl font-bold font-poppins mb-2">
                   {d.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{d.desc}</p>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                  {d.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -200,38 +202,40 @@ const Showcase = () => {
       </section>
 
       <section
-        className="relative py-28 px-8"
+        className="relative py-16 sm:py-28 px-5 sm:px-8"
         style={{
           background:
             "linear-gradient(180deg, #fff 0%, rgba(237,245,255,0.5) 100%)",
         }}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="head-text mb-12 text-center" data-aos="fade-up">
+          <h2 className="head-text mb-8 sm:mb-12 text-center" data-aos="fade-up">
             Stack I work with
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
             {skills.map((skill, i) => (
               <div
                 key={skill.name}
                 data-aos="zoom-in"
                 data-aos-delay={i * 60}
-                className="p-5 rounded-xl bg-white shadow-card border border-gray-100 flex items-center gap-3 hover:-translate-y-1 transition-transform"
+                className="p-3 sm:p-5 rounded-xl bg-white shadow-card border border-gray-100 flex items-center gap-2 sm:gap-3 hover:-translate-y-1 transition-transform"
               >
                 <span
-                  className="w-3 h-3 rounded-full"
+                  className="w-3 h-3 rounded-full flex-shrink-0"
                   style={{ background: skill.color }}
                 />
-                <span className="font-medium text-gray-800">{skill.name}</span>
+                <span className="font-medium text-gray-800 text-sm sm:text-base truncate">
+                  {skill.name}
+                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative py-28 px-8 bg-white">
+      <section className="relative py-16 sm:py-28 px-5 sm:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-8 sm:mb-12">
             <h2 className="head-text" data-aos="fade-right">
               Selected work
             </h2>
@@ -243,11 +247,11 @@ const Showcase = () => {
               See all →
             </Link>
           </div>
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-10 sm:gap-16">
             {myProjects.slice(0, 5).map((project, i) => (
               <div
                 key={project.id}
-                className={`grid lg:grid-cols-2 gap-10 items-center ${
+                className={`grid lg:grid-cols-2 gap-6 sm:gap-10 items-center ${
                   i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
                 data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
@@ -258,7 +262,7 @@ const Showcase = () => {
                       src={projectImage[project.image]}
                       alt={project.title}
                       loading="lazy"
-                      className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-56 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </Link>
@@ -266,13 +270,13 @@ const Showcase = () => {
                   <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">
                     Project 0{i + 1}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold font-poppins mb-3">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-poppins mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-5">
+                  <p className="text-gray-700 leading-relaxed mb-4 sm:mb-5 text-sm sm:text-base">
                     {project.desc}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-5">
+                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-5">
                     {project.tech.slice(0, 6).map((t) => (
                       <span
                         key={t}
@@ -295,18 +299,18 @@ const Showcase = () => {
         </div>
       </section>
 
-      <section className="relative py-28 px-8 bg-gradient-to-br from-[#db0000] to-[#640c0c] text-white">
+      <section className="relative py-16 sm:py-28 px-5 sm:px-8 bg-gradient-to-br from-[#db0000] to-[#640c0c] text-white">
         <div className="max-w-3xl mx-auto text-center" data-aos="zoom-in">
-          <h2 className="text-4xl sm:text-5xl font-extrabold font-poppins mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins mb-4 sm:mb-6">
             Have a project in mind?
           </h2>
-          <p className="text-white/80 mb-10 text-lg">
+          <p className="text-white/80 mb-8 sm:mb-10 text-base sm:text-lg">
             Whether you're hiring, collaborating, or just curious — my inbox is
             open.
           </p>
           <Link
             to={PORTFOLIO_ROUTES.CONTACT}
-            className="inline-block px-8 py-4 bg-white text-[#db0000] font-bold rounded-lg shadow-lg hover:-translate-y-0.5 transition-transform"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#db0000] font-bold rounded-lg shadow-lg hover:-translate-y-0.5 transition-transform"
           >
             Let's talk →
           </Link>

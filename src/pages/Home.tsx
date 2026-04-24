@@ -16,47 +16,37 @@ useGLTF.preload(bikeScene, true, true);
 useGLTF.preload(planeScene, true, true);
 useGLTF.preload(rocketScene, true, true);
 
+const getIsMobile = () =>
+  typeof window !== "undefined" && window.innerWidth < 768;
+
 const Home = () => {
   const [rotating, setRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState<number | null>(1);
   const [canvasReady, setCanvasReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(getIsMobile);
 
   useEffect(() => {
     const raf = requestAnimationFrame(() => setCanvasReady(true));
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  const adjustBikeForScreenSize = () => {
-    let screenScale = null;
-    let screenPosition = null;
-    const rotation = [0.1, 4.8, 0];
-    if (window.innerWidth < 768) {
-      screenScale = [15, 15, 15];
-      screenPosition = [0.8, -5, -43];
-    } else {
-      screenScale = [40, 40, 40];
-      screenPosition = [0, -25.5, -53];
-    }
-    return [screenScale, screenPosition, rotation];
-  };
-  const [bikeScale, bikePosition, bikeRotation] = adjustBikeForScreenSize();
+  useEffect(() => {
+    const onResize = () => setIsMobile(getIsMobile());
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+    };
+  }, []);
 
-  const adjustLogoForScreenSize = () => {
-    let screenScale, screenPosition;
+  const bikeRotation = [0.1, 4.8, 0];
+  const bikeScale = isMobile ? [15, 15, 15] : [40, 40, 40];
+  const bikePosition = isMobile ? [0.8, -5, -43] : [0, -25.5, -53];
 
-    const rotation = [0, 20.1, 0];
-    if (window.innerWidth < 768) {
-      screenScale = [0.2, 0.2, 0.2];
-      screenPosition = [0, -1, 3];
-    } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [-5, 2, 1];
-    }
-
-    return [screenScale, screenPosition, rotation];
-  };
-
-  const [logoScale, screenPosition, logoRotation] = adjustLogoForScreenSize();
+  const logoRotation = [0, 20.1, 0];
+  const logoScale = isMobile ? [0.2, 0.2, 0.2] : [3, 3, 3];
+  const screenPosition = isMobile ? [0, -1, 3] : [-5, 2, 1];
 
   useEffect(() => {
     AOS.init({

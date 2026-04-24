@@ -62,24 +62,15 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen">
-      {/* <div className="absolute w-full  " data-aos={"fade-down"}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#ff0000"
-            fill-opacity="1"
-            d="M0,64L48,106.7C96,149,192,235,288,245.3C384,256,480,192,576,138.7C672,85,768,43,864,58.7C960,75,1056,149,1152,192C1248,235,1344,245,1392,250.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          ></path>
-        </svg>
-      </div> */}
+    <section className="relative w-full min-h-screen">
       <div className="max-container flex lg:flex-row flex-col">
         {showConfetti && (
           <Confetti width={window.innerWidth} height={window.innerHeight} />
         )}
         <div className="flex-1 flex flex-col">
-          <div className="flex justify-between ">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
             <h1 className="head-text">Connect Here</h1>
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-wrap gap-3 sm:gap-4 items-center">
               <a
                 href="https://asheshgurung.com.np/"
                 target="_blank"
@@ -130,50 +121,44 @@ const Contact = () => {
           </div>
 
           <form
-            className="w-full flex flex-col mt-14 gap-7"
+            className="w-full flex flex-col mt-10 sm:mt-14 gap-5 sm:gap-7"
             onSubmit={onSubmit}
           >
-            <label className="text-black-500 font-semibold">Name</label>
-            <input
-              name={"name"}
-              type="text"
-              placeholder="Ashesh Gurung"
-              required
-              value={form.name}
-              onChange={onChange}
-              style={{
-                border: "1px solid gray",
-                borderRadius: "4px",
-                padding: "8px",
-              }}
-            />
-            <label className="text-black-500 font-semibold">Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="abc@gmail.com"
-              required
-              value={form.email}
-              onChange={onChange}
-              style={{
-                border: "1px solid gray",
-                borderRadius: "4px",
-                padding: "8px",
-              }}
-            />
-            <label className="text-black-500 font-semibold">Message</label>
-            <textarea
-              rows={5}
-              cols={10}
-              name="message"
-              onChange={onChange}
-              placeholder="Hey, I wanna hire you for ..."
-              style={{
-                border: "1px solid gray",
-                borderRadius: "4px",
-                padding: "8px",
-              }}
-            />
+            <div className="flex flex-col gap-2">
+              <label className="text-black-500 font-semibold">Name</label>
+              <input
+                name={"name"}
+                type="text"
+                placeholder="Ashesh Gurung"
+                required
+                value={form.name}
+                onChange={onChange}
+                className="w-full border border-gray-400 rounded-md px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#db0000]/40"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-black-500 font-semibold">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="abc@gmail.com"
+                required
+                value={form.email}
+                onChange={onChange}
+                className="w-full border border-gray-400 rounded-md px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#db0000]/40"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-black-500 font-semibold">Message</label>
+              <textarea
+                rows={5}
+                name="message"
+                onChange={onChange}
+                placeholder="Hey, I wanna hire you for ..."
+                value={form.message}
+                className="w-full border border-gray-400 rounded-md px-3 py-2 text-base resize-y focus:outline-none focus:ring-2 focus:ring-[#db0000]/40"
+              />
+            </div>
             <button className="btn" type="submit" disabled={loading}>
               {loading ? "Sending..." : "Submit"}
             </button>

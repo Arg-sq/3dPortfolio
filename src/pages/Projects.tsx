@@ -32,7 +32,7 @@ const Projects = () => {
       </div>
 
       <section
-        className="relative pt-32 pb-16 px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 px-5 sm:px-8 overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at 80% 20%, rgba(219,0,0,0.15), transparent 40%), radial-gradient(circle at 20% 80%, rgba(100,12,12,0.2), transparent 40%), #fff",
@@ -40,19 +40,19 @@ const Projects = () => {
       >
         <div className="max-w-5xl mx-auto text-center">
           <p
-            className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4"
+            className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4"
             data-aos="fade-down"
           >
             My Work
           </p>
           <h1
-            className="text-4xl sm:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-poppins leading-tight blue-gradient_text"
             data-aos="fade-up"
           >
             Projects I've shipped
           </h1>
           <p
-            className="mt-6 text-gray-600 text-lg max-w-2xl mx-auto"
+            className="mt-5 sm:mt-6 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="150"
           >
@@ -62,9 +62,9 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="py-16 px-8 bg-white">
+      <section className="py-12 sm:py-16 px-5 sm:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-5 sm:gap-6">
             {myProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
